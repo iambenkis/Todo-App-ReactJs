@@ -17,15 +17,21 @@ class TodoContainer extends React.Component {
           {
             id: 3,
             title: "Deploy to live server",
-            completed: false
+            completed: true
           }
         ]
        };
+       handleEvent = (id) => {
+        console.log("clicked ", id);
+      }; 
     render () {
         return (
             <div>
                 <Header />
-                <TodosList todosProps={this.state.todos} />
+                <TodosList 
+                    todosProps={this.state.todos} 
+                    handleEventProps={this.handleEvent} 
+                />
             </div>
         );
     }
