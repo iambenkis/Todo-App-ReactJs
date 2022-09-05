@@ -1,6 +1,7 @@
 import React from "react";
 import TodosList from "./TodoList";
 import Header from "./Header";
+import InputTodo from "./InputTodo";
 class TodoContainer extends React.Component {
     state = {
         todos: [
@@ -21,16 +22,34 @@ class TodoContainer extends React.Component {
           }
         ]
        };
-       handleEvent = (id) => {
-        console.log("clicked ", id);
+       handleEvent = id => {
+          this.setState({
+            todos: this.state.todos.map(todo =>{
+              if(todo.id === id) {
+                todo.completed = !todo.completed;
+              }
+              return todo;
+            })
+          })
       }; 
+      delTodo = (id) => {
+        this.setState({
+          todos: [
+            ...this.state.todos.filter(todo => {
+              return todo.id !==id;
+            })
+          ]
+        })
+      }
     render () {
         return (
             <div>
+                <InputTodo />
                 <Header />
                 <TodosList 
                     todosProps={this.state.todos} 
                     handleEventProps={this.handleEvent} 
+                    deleteProps= {this.delTodo}
                 />
             </div>
         );

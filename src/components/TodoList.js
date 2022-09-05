@@ -10,6 +10,7 @@ class TodosList extends React.Component {
                         key={todo.id} 
                         todoProp={todo}
                         handleEventProp={this.props.handleEventProps} 
+                        deleteProp = {this.props.deleteProps}
                     />
                 ))}
             </ul>
