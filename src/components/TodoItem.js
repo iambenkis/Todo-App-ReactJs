@@ -14,15 +14,14 @@ class TodoItem extends React.Component {
             <input 
                 type="checkbox" 
                 className={styles.checkbox}
-                checked={this.props.todoProp.completed}
+                checked={completed}
                 onChange={() => this.props.handleEventProp(id)}
             /> 
             <button onClick={() => this.props.deleteProp(id)}>
                 Deleted
             </button>
-            <span 
-                style={this.props.todoProp.completed ? completedStyle : null}>
-                {this.props.todoProp.title} 
+            <span style={completed ? completedStyle : null}>
+                {title} 
             </span>
         </li>)
     }
