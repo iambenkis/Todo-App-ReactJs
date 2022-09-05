@@ -5,23 +5,7 @@ import InputTodo from "./InputTodo";
 import { v4 as uuidv4 } from "uuid";
 class TodoContainer extends React.Component {
     state = {
-        todos: [
-          {
-            id: uuidv4(),
-            title: "Setup development environment",
-            completed: true
-          },
-          {
-            id: uuidv4(),
-            title: "Develop website and add content",
-            completed: false
-          },
-          {
-            id: uuidv4(),
-            title: "Deploy to live server",
-            completed: true
-          }
-        ]
+        todos: []
        };
        handleEvent = id => {
           this.setState({
@@ -61,6 +45,11 @@ class TodoContainer extends React.Component {
             return todo
           })
         })
+      }
+      componentDidMount() {
+        fetch("https://jsonplaceholder.typicode.com/todos?_limit=10")
+          .then(response => response.json())
+          .then(data => this.setState({ todos: data }));
       }
     render () {
         return (
