@@ -8,7 +8,7 @@ class InputTodo extends Component {
         this.setState({
             [e.target.name] : e.target.value
         });
-      };
+    };
     handleSubmit = e => {
         e.preventDefault();
         if(this.state.title.trim()) {
@@ -17,7 +17,7 @@ class InputTodo extends Component {
                 title: ""
             }) 
         } else {
-            alert("Please write item")
+            alert("Please write item");
         }
 
     }
@@ -27,6 +27,7 @@ class InputTodo extends Component {
                 <input 
                     type="text" 
                     placeholder="Add Todo"
+                    className="input-text"
                     name="title"
                     value={this.state.title}
                     onChange={this.onChange}
