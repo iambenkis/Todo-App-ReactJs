@@ -6,6 +6,7 @@ const InputTodo = (props) => {
     });
     const onChange = (e) => {
       setTile({
+        ...inputText,
         [e.target.name] : e.target.value
       })
     };
