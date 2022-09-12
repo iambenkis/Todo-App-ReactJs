@@ -59,7 +59,26 @@ body {
 
 .input-text,
 .input-submit {
-  height: 45px;
+  height: 50px;
   outline: none;
   border: none;
+}
+
+.input-submit {
+  color: green;
+}
+
+.input-submit svg {
+  color: darkcyan;
+  font-size: 20px;
+  margin-top: 2px;
+}
+
+.addForm {
+  border: 1px solid #000;
+  border-radius: 35px;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2.5rem;
 }

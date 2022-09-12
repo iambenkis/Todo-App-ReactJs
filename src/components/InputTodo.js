@@ -27,7 +27,7 @@ const InputTodo = (props) => {
   };
   // const { onChange, handleSubmit, state } = props;
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className='addForm'>
       <input
         type="text"
         placeholder="Add Todo"
@@ -36,8 +36,8 @@ const InputTodo = (props) => {
         value={inputText.title}
         onChange={onChange}
       />
-      <button type="submit" onSubmit={handleSubmit}>
-        < FaPlusCircle/>
+      <button type="submit" onSubmit={handleSubmit} className='input-submit'>
+        < FaPlusCircle />
       </button>
     </form>
   );
