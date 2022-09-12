@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from './TodoItem.module.css';
+import { FaTrashAlt } from "react-icons/fa"
+
 
 const TodoItem = (props) => {
   const [editing, setEditing] = useState(false);
@@ -38,13 +40,13 @@ const TodoItem = (props) => {
         checked={completed}
         onChange={() => props.handleEventProp(id)}
       />
-      <button type="button" onClick={() => props.deleteProp(id)}>
-        Deleted
+      <button type="button" onClick={() => props.deleteProp(id)} className='deleteBtn'>
+        <FaTrashAlt />
       </button>
       <span style={completed ? completedStyle : null}>
         {title}
       </span>
-      <div onDoubleClick={props.handEditing} style={viewMode}>...</div>
+      <div onDoubleClick={handleEditing} style={viewMode}>...</div>
       <input
         type="text"
         style={editMode}
@@ -53,7 +55,7 @@ const TodoItem = (props) => {
         onChange={(e) => {
           props.updateProps(e.target.value, id);
         }}
-        onKeyDown={props.handleUpdateDone}
+        onKeyDown={handleUpdateDone}
       />
     </li>
   );

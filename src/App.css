@@ -65,20 +65,24 @@ body {
 }
 
 .input-submit {
-  color: green;
+  color: rgba(0, 128, 0, 0.61);
 }
 
 .input-submit svg {
-  color: darkcyan;
   font-size: 20px;
   margin-top: 2px;
 }
 
 .addForm {
-  border: 1px solid #000;
+  border: 1px solid rgba(116, 116, 116, 0.671);
   border-radius: 35px;
   padding: 0 1.5rem;
   display: flex;
   justify-content: space-between;
   margin-bottom: 2.5rem;
+  box-shadow: 1px 2px 1px rgb(161, 161, 161);
+}
+
+.deleteBtn {
+  color: red;
 }
