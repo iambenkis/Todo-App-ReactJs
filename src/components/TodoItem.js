@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { FaTrashAlt } from 'react-icons/fa';
 import styles from './TodoItem.module.css';
-import { FaTrashAlt } from "react-icons/fa"
-
 
 const TodoItem = (props) => {
   const [editing, setEditing] = useState(false);
@@ -31,16 +30,21 @@ const TodoItem = (props) => {
   } else {
     editMode.display = 'none';
   }
-  const { completed, id, title } = props.todoProp;
+
+  const {
+    handleEventProp, deleteProp, updateProps, todoProp,
+  } = props;
+  const { id, title, completed } = todoProp;
+  const { item, checkbox, textInput } = styles;
   return (
-    <li className={styles.item}>
+    <li className={item}>
       <input
         type="checkbox"
-        className={styles.checkbox}
+        className={checkbox}
         checked={completed}
-        onChange={() => props.handleEventProp(id)}
+        onChange={() => handleEventProp(id)}
       />
-      <button type="button" onClick={() => props.deleteProp(id)} className='deleteBtn'>
+      <button type="button" onClick={() => deleteProp(id)} className="deleteBtn">
         <FaTrashAlt />
       </button>
       <span style={completed ? completedStyle : null}>
@@ -50,10 +54,10 @@ const TodoItem = (props) => {
       <input
         type="text"
         style={editMode}
-        className={styles.textInput}
+        className={textInput}
         value={title}
         onChange={(e) => {
-          props.updateProps(e.target.value, id);
+          updateProps(e.target.value, id);
         }}
         onKeyDown={handleUpdateDone}
       />

@@ -4,7 +4,7 @@ import TodosList from './TodoList';
 import Header from './Header';
 import InputTodo from './InputTodo';
 
-const TodoContainer = (props) => {
+const TodoContainer = () => {
   const getInitialTodos = () => {
     const temp = localStorage.getItem('todos');
     const savedTodos = JSON.parse(temp);
