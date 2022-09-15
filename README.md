@@ -12,7 +12,10 @@
 
 To get a local copy up and running follow these simple example steps.
 
-- Clone the project unto your local machine
+- Clone the project unto your local machine using the link below
+```bash
+https://github.com/iambenkis/Bookstore-App.git
+```
 - Open the project with your code editor
 - Run `npm install` to install all the dependencies
 - Run `npm start` to start the server
@@ -39,3 +42,9 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - Microverse
+
+## 📝 License
+
+The MIT License (MIT)
+
+Copyright (c) 2022
