@@ -4,7 +4,6 @@
 ## Technology used
 
 - React
-- JavaScript
 - CSS
 - JSX
 
